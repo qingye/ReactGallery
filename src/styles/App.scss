@@ -45,9 +45,15 @@ html, body {
       cursor: pointer;
       transform-origin: 0 0;
       transform-style: preserve-3d;
+      transform: scale(1.2);
       transition: transform .6s ease-in-out, left .6s ease-in-out, top .6s ease-in-out;
       &.inverse {
-        transform: translate(320px) rotateY(180deg);
+        //transform: translate(320px) rotateY(180deg) scale(1.2);
+        transform: translate(384px) rotateY(180deg) scale(1.2); // 320px * 1.2 = 384px
+      }
+
+      &.center {
+        background-color: #ffe87c;
       }
     }
 
@@ -57,6 +63,11 @@ html, body {
         margin: 20px 0 0 0;
         color: #a7a0a2;
         font-size: 16px;
+
+        &.center {
+          color: #ff0000;
+          font-size: 22px;
+        }
       }
 
       .img-back {
@@ -73,8 +84,12 @@ html, body {
         text-align: center;
         background-color: #ffffff;
         box-sizing: border-box;
-
         transform: rotateY(180deg) translateZ(1px);
+
+        &.center {
+          color: #ff0000;
+          font-size: 22px;
+        }
       }
     }
   }

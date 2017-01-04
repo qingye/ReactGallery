@@ -37,8 +37,10 @@ class ImageFigure extends Component {
       });
     }
 
-    let clazzName = 'img-figure';
-    clazzName += this.props.attr.inverse ? ' inverse' : '';
+    let clzCenter = this.props.attr.center ? ' center' : '';
+    let clazzName = 'img-figure' + clzCenter + (this.props.attr.inverse ? ' inverse' : '');
+    let titleClzName = 'img-title' + clzCenter;
+    let backClzName = ' img-back' + clzCenter;
 
     if (this.props.attr.center) {
       styleObject.zIndex = 11;
@@ -48,8 +50,8 @@ class ImageFigure extends Component {
       <figure className={clazzName} style={styleObject} onClick={this.handleClick}>
         <img src={this.props.data.imageUrl} alt={this.props.data.title} />
         <figcaption>
-          <h2 className="img-title">{this.props.data.title}</h2>
-          <div className=" img-back" onClick={this.handleClick}>
+          <h2 className={titleClzName}>{this.props.data.title}</h2>
+          <div className={backClzName} onClick={this.handleClick}>
             <p>
               {this.props.data.desc}
             </p>
